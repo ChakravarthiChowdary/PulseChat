@@ -1,75 +1,48 @@
-# React + TypeScript + Vite
+# 💬 Pulse Chat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Pulse Chat** is a modern, real-time chat web application built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**.  
+It allows users to connect and chat instantly with anyone, anytime — designed for speed, simplicity, and a smooth messaging experience.
 
-Currently, two official plugins are available:
+![Pulse Chat Banner](https://pulsechat.app/images/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- ⚡ **Real-time Messaging** – Connect instantly and exchange messages with no delays.
+- 🔒 **Secure Communication** – Built with privacy and security in mind.
+- 🎨 **Beautiful UI** – Responsive and minimal interface powered by Tailwind CSS.
+- 🌙 **Light & Dark Mode** – Seamless theme switching for better user experience.
+- 📱 **Fully Responsive** – Works perfectly across desktop, tablet, and mobile.
+- ⚙️ **Fast Build & Dev Experience** – Thanks to Vite’s lightning-fast bundling.
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## 🧰 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Category               | Technology                                    |
+| ---------------------- | --------------------------------------------- |
+| **Frontend Framework** | [React](https://react.dev/)                   |
+| **Language**           | [TypeScript](https://www.typescriptlang.org/) |
+| **Build Tool**         | [Vite](https://vitejs.dev/)                   |
+| **Styling**            | [Tailwind CSS](https://tailwindcss.com/)      |
+| **Icons & Assets**     | SVGs & Heroicons                              |
+| **Deployment Ready**   | Vercel / Netlify / AWS Amplify                |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📦 Installation & Setup
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Follow these steps to run **Pulse Chat** locally:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/pulse-chat.git
+cd pulse-chat
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Install dependencies
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Start the development server
+npm run dev
 ```
