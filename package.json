@@ -13,10 +13,14 @@
     "preview": "vite preview",
     "prettier": "npx prettier --check .",
     "prettier-fix": "npx prettier --write .",
-    "commit": "yarn validate-branch-name && yarn lint && git-cz --no-verify"
+    "commit": "yarn validate-branch-name && yarn lint && yarn test && git-cz --no-verify",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
+    "@types/jest": "^30.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.3",
@@ -26,6 +30,10 @@
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@eslint/js": "^9.36.0",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
@@ -37,12 +45,17 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
     "prettier": "^3.6.2",
     "prettify-xml": "^1.2.0",
+    "ts-jest": "^29.4.4",
+    "ts-node": "^10.9.2",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
     "validate-branch-name": "^1.3.2",
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "whatwg-fetch": "^3.6.20"
   },
   "config": {
     "commitizen": {
