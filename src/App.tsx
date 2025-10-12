@@ -6,7 +6,7 @@ import Profile from "./pages/Profile";
 
 const App = () => {
   return (
-    <div className="bg-[url('./src/assets/bg-image.avif')] bg-contain">
+    <div className="bg-[url('./src/assets/bg-image.jpg')] bg-contain">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<Login />} />
