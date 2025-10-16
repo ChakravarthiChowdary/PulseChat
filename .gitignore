@@ -26,3 +26,5 @@ dist-ssr
 
 # Ignore ESLint cache file
 .eslintcache
+
+.env

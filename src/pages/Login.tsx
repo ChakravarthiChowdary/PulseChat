@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Form, type LoginFormData } from "../components/features/login/Form";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../context/AuthContext";
 
 const Login: React.FC = () => {
   const [currState, setCurrState] = useState<"Sign up" | "Log in">("Sign up");
   const [isDataSubmitted, setIsDataSubmitted] = useState(false);
+  const authContext = useContext(AuthContext);
 
   const {
     register,
@@ -28,13 +30,18 @@ const Login: React.FC = () => {
       return;
     }
 
-    console.log("Form submitted:", data);
+    console.log("Form submitted:", data, authContext);
+    authContext?.login(currState === "Sign up" ? "register" : "login", data);
   };
 
   const handleToggleState = () => {
-    setCurrState(currState === "Sign up" ? "Log in" : "Sign up");
+    const newState = currState === "Sign up" ? "Log in" : "Sign up";
+    setCurrState(newState);
     setIsDataSubmitted(false);
-    reset();
+
+    if (newState === "Sign up") {
+      reset();
+    }
   };
 
   return (
@@ -47,6 +54,7 @@ const Login: React.FC = () => {
       handleSubmit={handleSubmit}
       errors={errors}
       watch={watch}
+      data-testid="login-form"
     />
   );
 };
